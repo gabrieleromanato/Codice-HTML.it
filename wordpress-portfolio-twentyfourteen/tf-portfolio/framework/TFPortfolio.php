@@ -106,7 +106,7 @@ class TFPortfolio {
   		
   		register_taxonomy( 'portfolio-category', array( 'portfolio' ), $catArgs );
   		
-  		//flush_rewrite_rules();
+  		flush_rewrite_rules();
 	}
 
 }

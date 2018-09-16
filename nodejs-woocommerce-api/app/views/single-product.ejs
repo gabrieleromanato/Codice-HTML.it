@@ -1,0 +1,33 @@
+<% include header %>
+
+
+<div id="dashboard" class="container">
+
+    <% include nav %>
+
+
+    <div class="row">
+
+        <div class="col-md-8">
+            <h1><%= product.title %></h1>
+            <p><%- product.price_html %></p>
+            <blockquote>
+                <%- product.short_description %>
+            </blockquote>
+            <article>
+                <%- product.description %>
+            </article>
+        </div>
+
+        <div class="col-md-4">
+            <figure>
+                <img src="<%= product.featured_src %>" alt="" class="img-responsive">
+            </figure>
+        </div>
+
+    </div>
+
+</div>
+
+
+<% include footer %>

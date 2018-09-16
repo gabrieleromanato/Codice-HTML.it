@@ -1,0 +1,42 @@
+<% include header %>
+
+
+<div id="dashboard" class="container">
+
+    <% include nav %>
+
+    <form action="/dashboard/import/products" method="post">
+        <p>
+            <button type="submit" class="btn btn-primary">Import products</button>
+        </p>
+        <% if(imported) { %>
+        <div class="alert alert-info">
+            Products imported successfully
+        </div>
+        <% } %>
+    </form>
+
+
+    <div class="row">
+
+        <% products.forEach(function(product) { %>
+
+
+        <div class="col-md-3">
+            <h4><%= product.name %></h4>
+            <p><%- product.price_html %></p>
+            <figure>
+                <img src="<%= product.featured_src %>" alt="" class="img-responsive">
+            </figure>
+            <p><a href="/dashboard/view/<%= product.id %>" class="btn btn-primary btn-block">View</a></p>
+        </div>
+
+
+        <% }); %>
+
+    </div>
+
+</div>
+
+
+<% include footer %>

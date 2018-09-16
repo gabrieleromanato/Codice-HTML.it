@@ -1,0 +1,41 @@
+<% include header %>
+
+
+<div id="dashboard" class="container">
+
+    <% include nav %>
+
+    <div class="row">
+
+        <form action="/dashboard/products/new" method="post" class="col-md-12">
+            <div class="form-group">
+                <input type="text" class="form-control" name="name" placeholder="Name">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" name="regular_price" placeholder="Price">
+            </div>
+            <div class="form-group">
+                <textarea name="description" class="form-control" placeholder="Description"></textarea>
+            </div>
+            <div class="form-group">
+                <textarea name="short_description" class="form-control" placeholder="Short description"></textarea>
+            </div>
+            <div class="form-group">
+                <select name="category" class="form-control">
+                    <option value="">Category</option>
+                    <% categories.forEach(function(category) { %>
+
+                    <option value="<%= category.id %>"><%= category.name %></option>
+
+                    <% }); %>
+                </select>
+            </div>
+            <p><input type="submit" class="btn btn-primary" value="Create"></p>
+        </form>
+
+    </div>
+
+</div>
+
+
+<% include footer %>

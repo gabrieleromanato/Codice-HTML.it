@@ -1,0 +1,30 @@
+<% include header %>
+
+
+<div id="dashboard" class="container">
+
+   <% include nav %>
+
+   <div class="row">
+
+   <% products.forEach(function(product) { %>
+
+
+    <div class="col-md-3">
+        <h4><%= product.name %></h4>
+        <p><%- product.price_html %></p>
+        <figure>
+            <img src="<%= product.images[0].src %>" alt="" class="img-responsive">
+        </figure>
+        <p><a href="<%= product.permalink %>" class="btn btn-primary btn-block">View</a></p>
+    </div>
+
+
+   <% }); %>
+
+    </div>
+
+</div>
+
+
+<% include footer %>
